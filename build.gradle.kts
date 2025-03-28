@@ -7,6 +7,7 @@ plugins {
     kotlin("kapt") version "1.9.25"
     id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
+    id("com.diffplug.spotless").version("6.19.0")
 }
 
 group = "cv"
@@ -56,4 +57,14 @@ allOpen {
 
 noArg {
     annotation("jakarta.persistence.Entity")
+}
+
+spotless {
+    kotlin {
+        target("**/*.kt")
+        ktlint()
+        indentWithSpaces()
+        endWithNewline()
+        trimTrailingWhitespace()
+    }
 }

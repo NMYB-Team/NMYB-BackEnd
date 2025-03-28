@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class NmnbApplication
 
 fun main(args: Array<String>) {
-	runApplication<NmnbApplication>(*args)
+    runApplication<NmnbApplication> (*args)
 }
