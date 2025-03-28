@@ -1,0 +1,38 @@
+services:
+  nmnb-blue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nmnb-blue
+    environment:
+      - SERVER_PORT=${nmnb_BLUE_PORT}
+    ports:
+      - "${nmnb_BLUE_PORT}:${INTERNAL_APP_PORT}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://nmnb-blue:${nmnb_BLUE_PORT}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - nmnb_network
+
+  nmnb-green:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nmnb-green
+    environment:
+      - SERVER_PORT=${nmnb_GREEN_PORT}
+    ports:
+      - "${nmnb_GREEN_PORT}:${INTERNAL_APP_PORT}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://nmnb-green:${nmnb_GREEN_PORT}/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - nmnb_network
+
+networks:
+  nmnb_network:
+    external: true
