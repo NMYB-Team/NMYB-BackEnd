@@ -33,6 +33,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("com.github.consoleau:kassava:2.1.0")
+    // Database
+    implementation("com.h2database:h2")
+    implementation("mysql:mysql-connector-java:8.0.29")
 }
 
 kotlin {
