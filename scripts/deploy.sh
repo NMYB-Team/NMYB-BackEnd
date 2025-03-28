@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # 변수 설정
-COMPOSE_PATH="../docker-compose.override.yml"
 PROJECT_DIR="/home/ubuntu/nmnb"
 NGINX_CONF_DIR="/home/ubuntu/nginx"
-DELAY=10
-NGINX_CONTAINER="nginx"
+
+COMPOSE_PATH="/home/ubuntu/$PROJECT_DIR/docker-compose.override.yml"
 ENV_FILE_PATH="/home/ubuntu/.env"
+
+NGINX_CONTAINER="nginx"
+DELAY=10
 
 # 현재 실행 중인 블루 컨테이너 확인
 BLUE_API_CONTAINER="$(docker ps --filter "name=nmnb-blue" --filter "status=running" | grep -v "CONTAINER ID")"
