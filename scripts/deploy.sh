@@ -4,7 +4,7 @@
 PROJECT_DIR="/home/ubuntu/nmnb"
 NGINX_CONF_DIR="/home/ubuntu/nginx"
 
-COMPOSE_PATH="/home/ubuntu/$PROJECT_DIR/docker-compose.override.yml"
+COMPOSE_PATH="$PROJECT_DIR/docker-compose.override.yml"
 ENV_FILE_PATH="/home/ubuntu/.env"
 
 NGINX_CONTAINER="nginx"
