@@ -33,10 +33,10 @@ jobs:
         with:
           files: ./src/main/resources/application.yml
         env:
-          cloud.aws.credentials.access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          cloud.aws.credentials.secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          cloud.aws.credentials.access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          cloud.aws.credentials.secret-key: ${{ secrets.AWS_SECRET_KEY }}
           cloud.aws.region.static: ${{ secrets.AWS_REGION }}
-          cloud.aws.s3.bucket: ${{ secrets.S3_BUCKET_NAME }}
+          cloud.aws.s3.bucket: ${{ secrets.S3_BUCKET_NAME_FOR_SERVICE }}
 
       - name: Set environment variables in application-dev.yml
         uses: microsoft/variable-substitution@v1
